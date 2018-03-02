@@ -30,5 +30,10 @@ namespace GEMS_Key
             if(e.ChangedButton == MouseButton.Left)
             this.DragMove();
         }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }

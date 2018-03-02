@@ -6,12 +6,15 @@
         xmlns:local="clr-namespace:GEMS_Key"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        x:Name="Window"
         
         Title="MainWindow" 
         Height="350" 
         Width="525"
         WindowStyle="None"
         ResizeMode="NoResize"
+        BorderBrush="{DynamicResource PrimaryHueMidBrush}"
+        BorderThickness="1"
         
         WindowStartupLocation="CenterScreen"
         >
@@ -21,18 +24,43 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
-        <!--Title Block-->
+
         <materialDesign:ColorZone Mode="PrimaryDark" materialDesign:ShadowAssist.ShadowDepth="Depth2"
                                   MouseDown="ColorZone_MouseDown"
                                   >
             <StackPanel>
-                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin=" 8 8 8 0">
-                    <materialDesign:PackIcon Kind="Key" Margin="5"/>
-                    <TextBlock Text="GEMS Key" Margin="5"/>
+                <!--Title Block-->
+                <Grid Grid.Row="0" Margin=" 8 8 8 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ToggleButton Margin="0,0,0,0"
+                            x:Name="MenuButton"
+                            Panel.ZIndex="0" 
+                            Style="{DynamicResource MaterialDesignFlatToggleButton}" 
+                            Grid.Column="0" 
+                            >
+                        <materialDesign:PackIcon Kind="Key" Foreground="White"/>
+                    </ToggleButton>
+                    <TextBlock Text="GEMS Key" 
+                               Margin="0"
+                               Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                               VerticalAlignment="Center"
+                               Grid.Column="1"/>
+                    <Button Margin="0,0,0,0" 
+                            Panel.ZIndex="0" 
+                            Style="{DynamicResource MaterialDesignToolForegroundButton}" 
+                            Grid.Column="2" 
+                            Click="CloseButton_Click"
+                            >
+                        <materialDesign:PackIcon Kind="ArrowCompress" />
+                    </Button>
+                </Grid>
 
-                </StackPanel>
-                <DockPanel Margin="16 8 8 16">
+                <!--Search Box-->
+                <DockPanel Margin="16 8 16 16">
                     <Grid materialDesign:RippleAssist.IsCentered="True">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -55,30 +83,43 @@
                                 <Button Style="{DynamicResource MaterialDesignToolButton}">
                                     <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
                                 </Button>
-                                <TextBox
-						Grid.Column="1"
-						MinWidth="200"
-						Margin="8,0,0,0"
-						VerticalAlignment="Center"
-						materialDesign:HintAssist.Hint="Let me go to"
-                        AcceptsReturn="True"
-                        TextWrapping="Wrap" 
-                        FontSize="16"
-                        materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-						BorderThickness="0" />
+                                <TextBox Grid.Column="1"
+						                    MinWidth="200"
+						                    Margin="8,0,0,0"
+						                    VerticalAlignment="Center"
+						                    materialDesign:HintAssist.Hint="Let me go to"
+                                            AcceptsReturn="True"
+                                            TextWrapping="Wrap" 
+                                            FontSize="16"
+                                            materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+						                    BorderThickness="0" />
                             </Grid>
                         </materialDesign:ColorZone>
-                        <Button
-				Margin="8,0,0,0"
-				Panel.ZIndex="0"
-				Style="{DynamicResource MaterialDesignToolForegroundButton}"
-                 Grid.Column="1">
-                            <materialDesign:PackIcon Kind="Send" />
-                        </Button>
+
                     </Grid>
                 </DockPanel>
             </StackPanel>
-
         </materialDesign:ColorZone>
+
+        <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuButton, Path=IsChecked}" 
+                                   VerticalAlignment="Stretch" 
+                                   Grid.RowSpan="3">
+            <materialDesign:DrawerHost.LeftDrawerContent>
+                <DockPanel Width="{Binding ElementName=Window, Path=ActualWidth}" VerticalAlignment="Top">
+                    <ToggleButton Margin="10"
+                            Panel.ZIndex="0" 
+                            Style="{DynamicResource MaterialDesignFlatPrimaryToggleButton}" 
+                            IsChecked="{Binding ElementName=MenuButton, Path=IsChecked, Mode=TwoWay}"
+                            HorizontalAlignment="Left"     
+                            >
+                        <materialDesign:PackIcon Kind="Key"/>
+                    </ToggleButton>
+                    <TextBlock Text="Setting" 
+                               Style="{DynamicResource MaterialDesignHeadlineTextBlock}"
+                               VerticalAlignment="Center"/>
+                </DockPanel>
+            </materialDesign:DrawerHost.LeftDrawerContent>
+        </materialDesign:DrawerHost>
+
     </Grid>
 </Window>
