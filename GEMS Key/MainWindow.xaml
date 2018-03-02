@@ -23,14 +23,16 @@
         </Grid.RowDefinitions>
         
         <!--Title Block-->
-        <materialDesign:ColorZone Mode="PrimaryDark" materialDesign:ShadowAssist.ShadowDepth="Depth2" MouseDown="ColorZone_MouseDown">
+        <materialDesign:ColorZone Mode="PrimaryDark" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                  MouseDown="ColorZone_MouseDown"
+                                  >
             <StackPanel>
-                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin=" 8 8 8 0">
                     <materialDesign:PackIcon Kind="Key" Margin="5"/>
                     <TextBlock Text="GEMS Key" Margin="5"/>
 
                 </StackPanel>
-                <DockPanel Margin="8 8 8 16">
+                <DockPanel Margin="16 8 8 16">
                     <Grid materialDesign:RippleAssist.IsCentered="True">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>

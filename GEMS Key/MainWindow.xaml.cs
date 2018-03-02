@@ -27,7 +27,8 @@ namespace GEMS_Key
 
         private void ColorZone_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            if(e.ChangedButton == MouseButton.Left)
+            this.DragMove();
         }
     }
 }
