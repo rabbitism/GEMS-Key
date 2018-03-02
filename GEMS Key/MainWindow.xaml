@@ -4,9 +4,79 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GEMS_Key"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
         
+        Title="MainWindow" 
+        Height="350" 
+        Width="525"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        
+        WindowStartupLocation="CenterScreen"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <!--Title Block-->
+        <materialDesign:ColorZone Mode="PrimaryDark" materialDesign:ShadowAssist.ShadowDepth="Depth2" MouseDown="ColorZone_MouseDown">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <materialDesign:PackIcon Kind="Key" Margin="5"/>
+                    <TextBlock Text="GEMS Key" Margin="5"/>
+
+                </StackPanel>
+                <DockPanel Margin="8 8 8 16">
+                    <Grid materialDesign:RippleAssist.IsCentered="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:ColorZone
+				Margin="0,0,0,0"
+				Padding="8,4,8,4"
+				Panel.ZIndex="1"
+				materialDesign:ShadowAssist.ShadowDepth="Depth1"
+				CornerRadius="4"
+				Mode="Standard"
+                Grid.Column="0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{DynamicResource MaterialDesignToolButton}">
+                                    <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
+                                </Button>
+                                <TextBox
+						Grid.Column="1"
+						MinWidth="200"
+						Margin="8,0,0,0"
+						VerticalAlignment="Center"
+						materialDesign:HintAssist.Hint="Let me go to"
+                        AcceptsReturn="True"
+                        TextWrapping="Wrap" 
+                        FontSize="16"
+                        materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+						BorderThickness="0" />
+                            </Grid>
+                        </materialDesign:ColorZone>
+                        <Button
+				Margin="8,0,0,0"
+				Panel.ZIndex="0"
+				Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                 Grid.Column="1">
+                            <materialDesign:PackIcon Kind="Send" />
+                        </Button>
+                    </Grid>
+                </DockPanel>
+            </StackPanel>
+
+        </materialDesign:ColorZone>
     </Grid>
 </Window>

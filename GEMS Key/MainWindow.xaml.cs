@@ -24,5 +24,10 @@ namespace GEMS_Key
         {
             InitializeComponent();
         }
+
+        private void ColorZone_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }
