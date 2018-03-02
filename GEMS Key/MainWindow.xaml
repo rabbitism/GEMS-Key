@@ -42,11 +42,12 @@
                             Style="{DynamicResource MaterialDesignFlatToggleButton}" 
                             Grid.Column="0" 
                             >
-                        <materialDesign:PackIcon Kind="Key" Foreground="White"/>
+                        <materialDesign:PackIcon Kind="Key" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
                     </ToggleButton>
                     <TextBlock Text="GEMS Key" 
                                Margin="0"
                                Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                               Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                                VerticalAlignment="Center"
                                Grid.Column="1"/>
                     <Button Margin="0,0,0,0" 
@@ -67,13 +68,13 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <materialDesign:ColorZone
-				Margin="0,0,0,0"
-				Padding="8,4,8,4"
-				Panel.ZIndex="1"
-				materialDesign:ShadowAssist.ShadowDepth="Depth1"
-				CornerRadius="4"
-				Mode="Standard"
-                Grid.Column="0">
+				            Margin="0,0,0,0"
+				            Padding="8,4,8,4"
+				            Panel.ZIndex="1"
+				            materialDesign:ShadowAssist.ShadowDepth="Depth1"
+				            CornerRadius="4"
+				            Mode="Standard"
+                            Grid.Column="0">    
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
