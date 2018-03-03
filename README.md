@@ -13,7 +13,7 @@ Step 2: Press Alt + G<br>
 Step 3: Click the button you need!
 
 ## Screenshots
-- [ ] TODO
+![](/GEMS-Key/WebResources/Screenshot1.png)
 
 ## Customization
 - [ ] TODO
