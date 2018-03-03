@@ -8,83 +8,96 @@
         mc:Ignorable="d"
         x:Name="Window"
         
-        Title="MainWindow" 
-        Height="350" 
+        Title="MainWindow"  
         Width="525"
         WindowStyle="None"
         ResizeMode="NoResize"
-        BorderBrush="{DynamicResource PrimaryHueMidBrush}"
-        BorderThickness="1"
+        Background="Transparent"
+        SizeToContent="Height"
+        AllowsTransparency="True"
         
         WindowStartupLocation="CenterScreen"
         >
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+    <materialDesign:Card Margin="2" Background="White" Opacity="0.95">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-        <materialDesign:ColorZone Mode="PrimaryDark" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+            <materialDesign:ColorZone Mode="PrimaryDark" materialDesign:ShadowAssist.ShadowDepth="Depth2"
                                   MouseDown="ColorZone_MouseDown"
                                   >
-            <StackPanel>
-                <!--Title Block-->
-                <Grid Grid.Row="0" Margin=" 8 8 8 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <ToggleButton Margin="0,0,0,0"
+                <StackPanel>
+                    <!--Title Block-->
+                    <Grid Grid.Row="0" Margin=" 8 8 8 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <ToggleButton Margin="0,0,0,0"
                             x:Name="MenuButton"
                             Panel.ZIndex="0" 
                             Style="{DynamicResource MaterialDesignFlatToggleButton}" 
                             Grid.Column="0" 
                             >
-                        <materialDesign:PackIcon Kind="Key" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
-                    </ToggleButton>
-                    <TextBlock Text="GEMS Key" 
+                            <materialDesign:PackIcon Kind="Key" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
+                        </ToggleButton>
+                        <TextBlock Text="GEMS Key" 
                                Margin="0"
                                Style="{StaticResource MaterialDesignHeadlineTextBlock}"
                                Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                                VerticalAlignment="Center"
                                Grid.Column="1"/>
-                    <Button Margin="0,0,0,0" 
-                            Panel.ZIndex="0" 
-                            Style="{DynamicResource MaterialDesignToolForegroundButton}" 
-                            Grid.Column="2" 
-                            Click="CloseButton_Click"
+                        <StackPanel Grid.Column="2" Orientation="Horizontal">
+                            <Button Margin="0,0,0,0" 
+                                    Panel.ZIndex="0"
+                                    Width="{Binding RelativeSource={RelativeSource Self}, Path=Height}"
+                                    Style="{DynamicResource MaterialDesignToolForegroundButton}" 
+                                    Click="CloseButton_Click"
                             >
-                        <materialDesign:PackIcon Kind="ArrowCompress" />
-                    </Button>
-                </Grid>
+                                <materialDesign:PackIcon Kind="Settings" />
+                            </Button>
+                            <Button Margin="0,0,0,0" 
+                                    Panel.ZIndex="0" 
+                                    Width="{Binding RelativeSource={RelativeSource Self}, Path=Height}"
+                                    Style="{DynamicResource MaterialDesignToolForegroundButton}" 
+                                    Click="CloseButton_Click"
+                            >
+                                <materialDesign:PackIcon Kind="ArrowCompress" />
+                            </Button>
+                        </StackPanel>
+                        
+                        
+                    </Grid>
 
-                <!--Search Box-->
-                <DockPanel Margin="16 8 16 16">
-                    <Grid materialDesign:RippleAssist.IsCentered="True">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <materialDesign:ColorZone
+                    <!--Search Box-->
+                    <DockPanel Margin="16 8 16 16">
+                        <Grid materialDesign:RippleAssist.IsCentered="True">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:ColorZone
 				            Margin="0,0,0,0"
 				            Padding="8,4,8,4"
 				            Panel.ZIndex="1"
 				            materialDesign:ShadowAssist.ShadowDepth="Depth1"
 				            CornerRadius="4"
 				            Mode="Standard"
-                            Grid.Column="0">    
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Button Style="{DynamicResource MaterialDesignToolButton}">
-                                    <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
-                                </Button>
-                                <TextBox Grid.Column="1"
+                            Grid.Column="0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Style="{DynamicResource MaterialDesignToolButton}">
+                                        <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
+                                    </Button>
+                                    <TextBox Grid.Column="1"
 						                    MinWidth="200"
 						                    Margin="8,0,0,0"
 						                    VerticalAlignment="Center"
@@ -94,33 +107,38 @@
                                             FontSize="16"
                                             materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
 						                    BorderThickness="0" />
-                            </Grid>
-                        </materialDesign:ColorZone>
+                                </Grid>
+                            </materialDesign:ColorZone>
 
-                    </Grid>
-                </DockPanel>
-            </StackPanel>
-        </materialDesign:ColorZone>
+                        </Grid>
+                    </DockPanel>
 
-        <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuButton, Path=IsChecked}" 
+                </StackPanel>
+            </materialDesign:ColorZone>
+            
+            <local:Buttons Grid.Row="1"/>
+
+            <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuButton, Path=IsChecked}" 
                                    VerticalAlignment="Stretch" 
-                                   Grid.RowSpan="3">
-            <materialDesign:DrawerHost.LeftDrawerContent>
-                <DockPanel Width="{Binding ElementName=Window, Path=ActualWidth}" VerticalAlignment="Top">
-                    <ToggleButton Margin="10"
+                                   Grid.RowSpan="3" MouseDown="ColorZone_MouseDown">
+                <materialDesign:DrawerHost.LeftDrawerContent>
+                    <DockPanel Width="{Binding ElementName=Window, Path=ActualWidth}" VerticalAlignment="Stretch" Background="{DynamicResource PrimaryHueDarkBrush}">
+                        <ToggleButton Margin="12 12 0 0"
                             Panel.ZIndex="0" 
                             Style="{DynamicResource MaterialDesignFlatPrimaryToggleButton}" 
-                            IsChecked="{Binding ElementName=MenuButton, Path=IsChecked, Mode=TwoWay}"
-                            HorizontalAlignment="Left"     
+                            IsChecked="{Binding ElementName=MenuButton, Path=IsChecked}"
+                            Grid.Column="0" 
+                            VerticalAlignment="Top"
                             >
-                        <materialDesign:PackIcon Kind="Key"/>
-                    </ToggleButton>
-                    <TextBlock Text="Setting" 
-                               Style="{DynamicResource MaterialDesignHeadlineTextBlock}"
-                               VerticalAlignment="Center"/>
-                </DockPanel>
-            </materialDesign:DrawerHost.LeftDrawerContent>
-        </materialDesign:DrawerHost>
+                            <materialDesign:PackIcon Kind="ArrowLeft" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
+                        </ToggleButton>
+                        <local:Info Margin="12"/>
+                    </DockPanel>
+                </materialDesign:DrawerHost.LeftDrawerContent>
+            </materialDesign:DrawerHost>
 
-    </Grid>
+        </Grid>
+    </materialDesign:Card>
+
+
 </Window>

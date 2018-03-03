@@ -35,5 +35,5 @@ Example 2: Search `Rabbitism` in Youdao.com
 
 ## Acknowledgement
 * UI Library: [MaterialDesignInXamlToolkit](https://github.com/ButchersBoy/MaterialDesignInXamlToolkit)
-* Hotkey library: Autohotkey Interop
+* Hotkey library: [Autohotkey Interop](https://github.com/amazing-andrew/AutoHotkey.Interop)
 * Schlumberger employees initiating the original project
