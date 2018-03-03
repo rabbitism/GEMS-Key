@@ -13,7 +13,7 @@ Step 2: Press Alt + G<br>
 Step 3: Click the button you need!
 
 ## Screenshots
-![](/GEMS-Key/WebResources/Screenshot1.png)
+![](https://github.com/rabbitism/GEMS-Key/blob/master/WebResources/Screenshot1.png)
 
 ## Customization
 - [ ] TODO
