@@ -12,7 +12,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Created by: " Style="{StaticResource MaterialDesignSubheadingTextBlock}"></TextBlock>
             <TextBlock Text="Bin 'Bunny' Dong" Style="{StaticResource MaterialDesignSubheadingTextBlock}"></TextBlock>
-            <Image Source="/GEMS Key;component/Image/Bin.ico" Height="20"/>
+            <!--<Image Source="/GEMS Key;component/Image/Bin.ico" Height="20"/>-->
             
         </StackPanel>
         <StackPanel Orientation="Horizontal">

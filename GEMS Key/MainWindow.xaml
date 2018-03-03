@@ -8,12 +8,11 @@
         mc:Ignorable="d"
         x:Name="Window"
         
-        Title="MainWindow"  
-        Width="525"
+        Title="GEMS Key"  
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
-        SizeToContent="Height"
+        SizeToContent="WidthAndHeight"
         AllowsTransparency="True"
         
         WindowStartupLocation="CenterScreen"
@@ -98,7 +97,9 @@
                                         <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
                                     </Button>
                                     <TextBox Grid.Column="1"
+                                             x:Name="Box"
 						                    MinWidth="200"
+                                            MaxWidth="400"
 						                    Margin="8,0,0,0"
 						                    VerticalAlignment="Center"
 						                    materialDesign:HintAssist.Hint="Let me go to"
@@ -122,7 +123,7 @@
                                    VerticalAlignment="Stretch" 
                                    Grid.RowSpan="3" MouseDown="ColorZone_MouseDown">
                 <materialDesign:DrawerHost.LeftDrawerContent>
-                    <DockPanel Width="{Binding ElementName=Window, Path=ActualWidth}" VerticalAlignment="Stretch" Background="{DynamicResource PrimaryHueDarkBrush}">
+                    <DockPanel Width="350" VerticalAlignment="Stretch" Background="{DynamicResource PrimaryHueDarkBrush}">
                         <ToggleButton Margin="12 12 0 0"
                             Panel.ZIndex="0" 
                             Style="{DynamicResource MaterialDesignFlatPrimaryToggleButton}" 

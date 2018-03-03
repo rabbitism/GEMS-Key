@@ -11,6 +11,7 @@
             <TextBlock Text="Search Engine" Style="{StaticResource MaterialDesignButtonTextBlock}" Margin="8"/>
             <Button Content="Google" Margin="4 0" Style="{StaticResource MaterialDesignRaisedButton}"/>
             <Button Content="WikiPedia" Margin="4 0" Style="{StaticResource MaterialDesignFlatButton}"/>
+            <Button Content="Baidu" Margin="4 0" Style="{StaticResource MaterialDesignFlatButton}"/>
         </StackPanel>
     </StackPanel>
 </UserControl>
