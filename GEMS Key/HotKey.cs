@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Interop;
 
@@ -23,7 +20,7 @@ namespace GEMS_Key
 
         private bool _disposed = false;
 
-        public System.Windows.Input.Key Key { get; private set; }
+        public Key Key { get; private set; }
         public KeyModifier KeyModifiers { get; private set; }
         public Action<HotKey> Action { get; private set; }
         public int Id { get; set; }

@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoHotkey.Interop">
-      <HintPath>..\..\GeMS-Key-Plus\GeMS Key Plus\bin\Debug\AutoHotkey.Interop.dll</HintPath>
+      <HintPath>..\..\AutoHotkey\src\AutoHotkey.Interop\bin\Debug\AutoHotkey.Interop.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>

@@ -121,7 +121,7 @@
 
             <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuButton, Path=IsChecked}" 
                                    VerticalAlignment="Stretch" 
-                                   Grid.RowSpan="3" MouseDown="ColorZone_MouseDown">
+                                   Grid.RowSpan="3" MouseDown="ColorZone_MouseDown" Grid.Column="0" Grid.Row="0">
                 <materialDesign:DrawerHost.LeftDrawerContent>
                     <DockPanel Width="350" VerticalAlignment="Stretch" Background="{DynamicResource PrimaryHueDarkBrush}">
                         <ToggleButton Margin="12 12 0 0"
