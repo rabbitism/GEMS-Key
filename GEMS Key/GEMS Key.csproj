@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoHotkey.Interop">
-      <HintPath>..\..\AutoHotkey\src\AutoHotkey.Interop\bin\Debug\AutoHotkey.Interop.dll</HintPath>
+      <HintPath>..\..\GEMS-KEY-PLUS\GeMS Key Plus\bin\Debug\AutoHotkey.Interop.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
@@ -70,6 +70,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\ButtonsCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Info.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,6 +89,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ButtonsCategory.xaml.cs">
+      <DependentUpon>ButtonsCategory.xaml</DependentUpon>
     </Compile>
     <Compile Include="HotKey.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />

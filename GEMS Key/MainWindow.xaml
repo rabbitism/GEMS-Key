@@ -89,14 +89,10 @@
                             Grid.Column="0">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
-                                    <Button Style="{DynamicResource MaterialDesignToolButton}">
-                                        <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
-                                    </Button>
-                                    <TextBox Grid.Column="1"
+                                    <TextBox Grid.Column="0"
                                              x:Name="Box"
 						                    MinWidth="200"
                                             MaxWidth="400"
@@ -108,6 +104,9 @@
                                             FontSize="16"
                                             materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
 						                    BorderThickness="0" />
+                                    <Button Style="{DynamicResource MaterialDesignToolButton}" Grid.Column="1" VerticalAlignment="Top">
+                                        <materialDesign:PackIcon Kind="Eraser" Opacity=".56" />
+                                    </Button>
                                 </Grid>
                             </materialDesign:ColorZone>
 
@@ -117,7 +116,8 @@
                 </StackPanel>
             </materialDesign:ColorZone>
             
-            <local:Buttons Grid.Row="1"/>
+            <local:Buttons Grid.Row="1" Margin=" 8 0"/>
+            <!--<local:ButtonsCategory Grid.Row="2"/>-->
 
             <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuButton, Path=IsChecked}" 
                                    VerticalAlignment="Stretch" 

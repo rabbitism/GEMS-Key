@@ -23,6 +23,21 @@ namespace GEMS_Key
         public Buttons()
         {
             InitializeComponent();
+            List<Category> categories = new List<Category>();
+            categories.Add(new Category() { CategoryName = "Part" });
+            categories.Add(new Category() { CategoryName = "BOM" });
+            categories.Add(new Category() { CategoryName = "Document" });
+            categories.Add(new Category() { CategoryName = "Drawing" });
+            categories.Add(new Category() { CategoryName = "Change" });
+            categories.Add(new Category() { CategoryName = "eQuality" });
+            categories.Add(new Category() { CategoryName = "eCPU" });
+            CategoryList.ItemsSource = categories;
         }
+    }
+
+    public class Category
+    {
+        public string CategoryName { get; set; }
+        public List<ButtonInfo> buttons { get; set; } = null;
     }
 }
