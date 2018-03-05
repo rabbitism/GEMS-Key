@@ -15,7 +15,7 @@ namespace GEMS_Key
         {
             InitializeComponent();
             //This hotkey is for Windows 10 users. Win+G is reserved by system to call out XBOX and game center bar. This might be fixed in the future.
-            //HotKey hotKey = new HotKey(Key.G, KeyModifier.Alt, Callout);
+            HotKey hotKey = new HotKey(Key.G, KeyModifier.Alt, Callout);
         }
 
         private void ColorZone_MouseDown(object sender, MouseButtonEventArgs e)
@@ -40,6 +40,7 @@ namespace GEMS_Key
                 Ahk.ExecRaw("Send, ^c");
                 Thread.Sleep(300);
                 Box.Text = Clipboard.GetText().Trim();
+                GlobalVariables.Text = Box.Text;
                 WindowState = WindowState.Normal;
                 Activate();
                 Focus();
@@ -52,5 +53,21 @@ namespace GEMS_Key
                 ShowInTaskbar = true;
             }
         }
+
+        private void Box_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            GlobalVariables.Text = Box.Text;
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            GlobalVariables.Text = null;
+            Box.Clear();
+        }
+    }
+
+    public static class GlobalVariables
+    {
+        public static string Text { get; set; }
     }
 }

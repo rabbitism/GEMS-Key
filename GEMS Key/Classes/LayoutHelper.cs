@@ -11,13 +11,14 @@ namespace GEMS_Key
         public static List<Category> SetLayout()
         {
             List<Category> categoryList = new List<Category>();
+            /*
             categoryList.Add(
                 new Category()
                 {
                     CategoryName = "Part",
                     ButtonList = new List<ButtonInfo>()
                     {
-                        new ButtonInfo(){ButtonName = "Released"},
+                        new ButtonInfo(){ButtonName = "Released", Prefix="http://www.gems.slb.com/enovia/common/emxNavigator.jsp?Type=Part&Name=", Suffix="&Rev=!"},
                         new ButtonInfo(){ButtonName = "Created"},
                         new ButtonInfo(){ButtonName = "All"}
                     }
@@ -29,7 +30,7 @@ namespace GEMS_Key
                     ButtonList = new List<ButtonInfo>()
                     {
                         new ButtonInfo(){ButtonName = "Released"},
-                        new ButtonInfo(){ButtonName = "With Parttttttttttttt"},
+                        new ButtonInfo(){ButtonName = "With Part"},
                         new ButtonInfo(){ButtonName = "Created"},
                         new ButtonInfo(){ButtonName = "With Part"}
                     }
@@ -78,16 +79,17 @@ namespace GEMS_Key
                         new ButtonInfo(){ButtonName = "TFL"}
                     }
                 });
+                */
             categoryList.Add(
                 new Category()
                 {
                     CategoryName = "Search",
                     ButtonList = new List<ButtonInfo>()
                     {
-                        new ButtonInfo(){ButtonName = "Google"},
-                        new ButtonInfo(){ButtonName = "Baidu"},
-                        new ButtonInfo(){ButtonName = "Youdao"},
-                        new ButtonInfo(){ButtonName = "Wiki"}
+                        new ButtonInfo(){ButtonName = "Google", Prefix="http://www.google.com/search?q="},
+                        new ButtonInfo(){ButtonName = "Baidu", Prefix="https://www.baidu.com/s?wd="},
+                        new ButtonInfo(){ButtonName = "Youdao", Prefix="http://www.youdao.com/w/eng/"},
+                        new ButtonInfo(){ButtonName = "Wiki", Prefix="https://en.wikipedia.org/wiki/"}
                     }
                 });
             return categoryList;

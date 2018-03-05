@@ -55,6 +55,7 @@
                                     Panel.ZIndex="0"
                                     Width="{Binding RelativeSource={RelativeSource Self}, Path=Height}"
                                     Style="{DynamicResource MaterialDesignToolForegroundButton}" 
+                                    ToolTip="Settings"
                                     Click="CloseButton_Click"
                             >
                                 <materialDesign:PackIcon Kind="Settings" />
@@ -63,6 +64,7 @@
                                     Panel.ZIndex="0" 
                                     Width="{Binding RelativeSource={RelativeSource Self}, Path=Height}"
                                     Style="{DynamicResource MaterialDesignToolForegroundButton}" 
+                                    ToolTip="Minimize. Right Click on Task Bar to close GEMS Key"
                                     Click="CloseButton_Click"
                             >
                                 <materialDesign:PackIcon Kind="ArrowCompress" />
@@ -98,13 +100,14 @@
                                             MaxWidth="400"
 						                    Margin="8,0,0,0"
 						                    VerticalAlignment="Center"
-						                    materialDesign:HintAssist.Hint="Let me go to"
+						                    materialDesign:HintAssist.Hint="Press Alt+G to copy highlighted information"
                                             AcceptsReturn="True"
                                             TextWrapping="Wrap" 
                                             FontSize="16"
                                             materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-						                    BorderThickness="0" />
-                                    <Button Style="{DynamicResource MaterialDesignToolButton}" Grid.Column="1" VerticalAlignment="Top">
+						                    BorderThickness="0"
+                                            TextChanged="Box_TextChanged"/>
+                                    <Button Style="{DynamicResource MaterialDesignToolButton}" Grid.Column="1" VerticalAlignment="Top" Click="Clear_Click">
                                         <materialDesign:PackIcon Kind="Eraser" Opacity=".56" />
                                     </Button>
                                 </Grid>

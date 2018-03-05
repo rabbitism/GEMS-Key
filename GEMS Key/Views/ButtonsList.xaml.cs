@@ -49,8 +49,12 @@ namespace GEMS_Key
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            Process.Start("https://www.google.com/search?q=");
+            if (!string.IsNullOrEmpty(GlobalVariables.Text))
+            {
+                var button = (FrameworkElement)sender;
+                var model = (ButtonInfo)button.DataContext;
+                Process.Start(model.Prefix + GlobalVariables.Text + model.Suffix);
+            }
         }
     }
 
