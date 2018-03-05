@@ -23,7 +23,7 @@ namespace GEMS_Key
         public Categories()
         {
             InitializeComponent();
-            List<Category> categories = LayoutHelper.SetLayout();
+            List<Category> categories = Category.DeserializeInventory();
             CategoryList.ItemsSource = categories;
         }
     }
