@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,16 +19,11 @@ namespace GEMS_Key
     /// <summary>
     /// Interaction logic for ButtonsCategory.xaml
     /// </summary>
-    public partial class ButtonsCategory : UserControl
+    public partial class ButtonsList : UserControl
     {
-        public ButtonsCategory()
+        public ButtonsList()
         {
             InitializeComponent();
-            List<ButtonInfo> buttons = new List<ButtonInfo>();
-            buttons.Add(new ButtonInfo() { ButtonName = "Released" });
-            buttons.Add(new ButtonInfo() { ButtonName = "Created" });
-            buttons.Add(new ButtonInfo() { ButtonName = "All Rev" });
-            ButtonList.ItemsSource = buttons;
         }
 
         public string CategoryName
@@ -38,12 +34,25 @@ namespace GEMS_Key
 
         // Using a DependencyProperty as the backing store for CategoryName.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty CategoryNameProperty =
-            DependencyProperty.Register("CategoryName", typeof(string), typeof(ButtonsCategory), new PropertyMetadata("Default"));
+            DependencyProperty.Register("CategoryName", typeof(string), typeof(ButtonsList), new PropertyMetadata("Default"));
 
+
+        public List<ButtonInfo> List
+        {
+            get { return (List<ButtonInfo>)GetValue(ListProperty); }
+            set { SetValue(ListProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for list.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ListProperty =
+            DependencyProperty.Register("List", typeof(List<ButtonInfo>), typeof(ButtonsList), new PropertyMetadata(null));
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            Process.Start("https://www.google.com/search?q=");
+        }
     }
 
-    public class ButtonInfo
-    {
-        public string ButtonName { get; set; }
-    }
+    
 }

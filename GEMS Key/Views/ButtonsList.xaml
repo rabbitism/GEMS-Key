@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="GEMS_Key.ButtonsCategory"
+﻿<UserControl x:Class="GEMS_Key.ButtonsList"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,16 +6,22 @@
              xmlns:local="clr-namespace:GEMS_Key"
              xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             Margin="0 4 "
+             Margin="0 4"
              >
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="{Binding CategoryName}" 
-                   Style="{StaticResource MaterialDesignButtonTextBlock}"
-                   Margin="4 0" MinWidth="80"/>
-        <ItemsControl x:Name="ButtonList">
+                   Style="{StaticResource MaterialDesignSubheadingTextBlock}"
+                   Margin="4 0" MinWidth="80"
+                   VerticalAlignment="Center"/>
+        <ItemsControl ItemsSource="{Binding ButtonList}" IsTabStop="False">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Button Content="{Binding ButtonName}" Margin="4 0"/>
+                    <Button Content="{Binding ButtonName}" 
+                            Style="{DynamicResource MaterialDesignFlatButton}"
+                            Margin="4 0"
+                            MinWidth="80"
+                            Padding="0"
+                            Click="Button_Click"/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
             <ItemsControl.ItemsPanel>

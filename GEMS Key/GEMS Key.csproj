@@ -70,7 +70,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\ButtonsCategory.xaml">
+    <Page Include="Views\ButtonsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -78,7 +78,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Buttons.xaml">
+    <Page Include="Views\Categories.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -90,16 +90,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Views\ButtonsCategory.xaml.cs">
-      <DependentUpon>ButtonsCategory.xaml</DependentUpon>
+    <Compile Include="Classes\CategoryList.cs" />
+    <Compile Include="Classes\LayoutHelper.cs" />
+    <Compile Include="Views\ButtonsList.xaml.cs">
+      <DependentUpon>ButtonsList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HotKey.cs" />
+    <Compile Include="Classes\HotKey.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\Info.xaml.cs">
       <DependentUpon>Info.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Buttons.xaml.cs">
-      <DependentUpon>Buttons.xaml</DependentUpon>
+    <Compile Include="Views\Categories.xaml.cs">
+      <DependentUpon>Categories.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -136,5 +138,6 @@
   <ItemGroup>
     <Resource Include="Image\Bin.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

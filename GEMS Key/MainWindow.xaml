@@ -116,7 +116,7 @@
                 </StackPanel>
             </materialDesign:ColorZone>
             
-            <local:Buttons Grid.Row="1" Margin=" 8 0"/>
+            <local:Categories Grid.Row="1" Margin=" 8 0"/>
             <!--<local:ButtonsCategory Grid.Row="2"/>-->
 
             <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuButton, Path=IsChecked}" 
