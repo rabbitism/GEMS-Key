@@ -10,23 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace GEMS_Key
 {
     /// <summary>
-    /// Interaction logic for Buttons.xaml
+    /// Interaction logic for Settings.xaml
     /// </summary>
-    public partial class Categories : UserControl
+    public partial class Settings : Window
     {
-        public Categories()
+        public Settings()
         {
             InitializeComponent();
-            CategoryList.ItemsSource = LayoutHelper.SetLayout();
         }
 
-        
+        private void UIElement_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                DragMove();
+        }
     }
-
 }

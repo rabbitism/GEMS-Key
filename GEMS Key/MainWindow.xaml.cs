@@ -65,6 +65,12 @@ namespace GEMS_Key
             GlobalVariables.Text = null;
             Box.Clear();
         }
+
+        private void Setting_Click(object sender, RoutedEventArgs e)
+        {
+            Window a = new Settings();
+            a.Show();
+        }
     }
 
     public static class GlobalVariables

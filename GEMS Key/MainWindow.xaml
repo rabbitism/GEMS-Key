@@ -46,7 +46,7 @@
                         </ToggleButton>
                         <TextBlock Text="GEMS Key" 
                                Margin="0"
-                               Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                               Style="{DynamicResource MaterialDesignHeadlineTextBlock}"
                                Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                                VerticalAlignment="Center"
                                Grid.Column="1"/>
@@ -57,6 +57,15 @@
                                     Style="{DynamicResource MaterialDesignToolForegroundButton}" 
                                     ToolTip="Settings"
                                     Click="CloseButton_Click"
+                            >
+                                <materialDesign:PackIcon Kind="History" />
+                            </Button>
+                            <Button Margin="0,0,0,0" 
+                                    Panel.ZIndex="0"
+                                    Width="{Binding RelativeSource={RelativeSource Self}, Path=Height}"
+                                    Style="{DynamicResource MaterialDesignToolForegroundButton}" 
+                                    ToolTip="Settings"
+                                    Click="Setting_Click"
                             >
                                 <materialDesign:PackIcon Kind="Settings" />
                             </Button>

@@ -8,15 +8,16 @@
              mc:Ignorable="d" 
              >
     <StackPanel TextElement.Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-        <TextBlock Text="Welcome to GEMS Key" Style="{StaticResource MaterialDesignHeadlineTextBlock}"/>
+        <TextBlock Text="GEMS Key" Style="{DynamicResource MaterialDesignHeadlineTextBlock}"/>
+        <TextBlock Text="Version 3.0.0"></TextBlock>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Created by: " Style="{StaticResource MaterialDesignSubheadingTextBlock}"></TextBlock>
-            <TextBlock Text="Bin 'Bunny' Dong" Style="{StaticResource MaterialDesignSubheadingTextBlock}"></TextBlock>
+            <TextBlock Text="Created by: " ></TextBlock>
+            <TextBlock Text="Bin 'Bunny' Dong" ></TextBlock>
             <!--<Image Source="/GEMS Key;component/Image/Bin.ico" Height="20"/>-->
             
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <TextBlock x:Name="ContactInfo" Text="Contact me: " Style="{StaticResource MaterialDesignSubheadingTextBlock}"/>
+            <TextBlock x:Name="ContactInfo" Text="Contact me: " />
             <materialDesign:PackIcon Kind="GithubCircle" Width="{Binding Path=Height, ElementName=ContactInfo}" Height="{Binding Path=Height, ElementName=ContactInfo}"/>
             <materialDesign:PackIcon Kind="Email" Width="{Binding Path=Height, ElementName=ContactInfo}" Height="{Binding Path=Height, ElementName=ContactInfo}"/>
             

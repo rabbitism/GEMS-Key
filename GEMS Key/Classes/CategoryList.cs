@@ -40,9 +40,11 @@ namespace GEMS_Key
                 }
             };
 
-            List<Category> categories = new List<Category>();
-            categories.Add(category1);
-            categories.Add(category2);
+            List<Category> categories = new List<Category>
+            {
+                category1,
+                category2
+            };
             using (FileStream stream = File.Create("config.xml"))
             {
                 var serializer = new XmlSerializer(typeof(List<Category>));
