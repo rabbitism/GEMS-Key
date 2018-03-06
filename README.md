@@ -16,7 +16,9 @@ Step 3: Click the button you need!
 ![](https://github.com/rabbitism/GEMS-Key/blob/master/WebResources/Screenshot1.png)
 
 ## Customization
-- [ ] TODO
+User could modify configuration file and customize their own layout. 
+- [ ] Tool under development
+- [ ] Color customization under development
 
 ## FAQ
 ### Why is it called GEMS Key?
