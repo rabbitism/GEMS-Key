@@ -22,23 +22,28 @@ namespace GEMS_Key
         {
             var category1 = new Category
             {
-                CategoryName = "Part",
+                CategoryName = "Search",
                 ButtonList = new List<ButtonInfo>
                 {
-                    new ButtonInfo {ButtonName = "Released"},
-                    new ButtonInfo {ButtonName = "Created"}
+                    new ButtonInfo {ButtonName = "Google", Prefix = "http://www.google.com/search?q="},
+                    new ButtonInfo {ButtonName = "Baidu", Prefix = "https://www.baidu.com/s?wd="},
+                    new ButtonInfo {ButtonName = "Wiki", Prefix = "https://en.wikipedia.org/wiki/"}
                 }
             };
 
             var category2 = new Category
             {
-                CategoryName = "BOM",
+                CategoryName = "Translation",
                 ButtonList = new List<ButtonInfo>
                 {
-                    new ButtonInfo {ButtonName = "Released"},
-                    new ButtonInfo {ButtonName = "Created"}
+                    new ButtonInfo {ButtonName = "Youdao", Prefix = "http://www.youdao.com/w/eng/"},
+                    new ButtonInfo {ButtonName = "STS", Prefix = "https://translation.steampowered.com/translate.php?search_input=", Suffix = "&lang=schinese"},
+                    new ButtonInfo {ButtonName = "Google", Prefix = "https://translate.google.com/#auto/en/"}
+
                 }
+
             };
+
 
             List<Category> categories = new List<Category>
             {
@@ -68,10 +73,13 @@ namespace GEMS_Key
     {
         [XmlElement]
         public string ButtonName { get; set; } = "Search";
+
         [XmlElement]
-        public string Hotkey { get; set; }
+        public string Hotkey { get; set; } = null;
+
         [XmlElement]
         public string Prefix { get; set; } = null;
+
         [XmlElement]
         public string Suffix { get; set; } = null;
     }

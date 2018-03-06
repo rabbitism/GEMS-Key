@@ -4,7 +4,7 @@ Integrate your frequent used websites, and query with keywords.<br>
 |Author|Bin Dong
 |---|---
 |Email|popmessiah@hotmail.com
-|知乎|[兔基兔基](https://www.zhihu.com/people/rabbitism/activities)
+|知乎|[兔基](https://www.zhihu.com/people/rabbitism/activities)
 |Linkedin|[Bin Dong](https://www.linkedin.com/in/bin-dong-48272336/)
 
 ## How to Use GEMS Key
