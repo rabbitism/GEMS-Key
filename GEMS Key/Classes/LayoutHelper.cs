@@ -13,9 +13,9 @@ namespace GEMS_Key
         {
             if (!File.Exists("config.xml"))
             {
-                Category.SerializeInventory();
+                Category.InitializeUserConfig();
             }
-            List<Category> categoryList = Category.DeserializeInventory();
+            List<Category> categoryList = Category.DeserializeUserConfig();
             return categoryList;
         }
     }

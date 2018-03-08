@@ -70,7 +70,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Settings.xaml">
+    <Page Include="Views\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,7 +96,7 @@
     </Compile>
     <Compile Include="Classes\CategoryList.cs" />
     <Compile Include="Classes\LayoutHelper.cs" />
-    <Compile Include="Settings.xaml.cs">
+    <Compile Include="Views\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ButtonsList.xaml.cs">

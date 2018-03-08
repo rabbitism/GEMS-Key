@@ -18,7 +18,7 @@ namespace GEMS_Key
 
         public List<ButtonInfo> ButtonList { get; set; } = null;
 
-        public static void SerializeInventory()
+        public static void InitializeUserConfig()
         {
             var category1 = new Category
             {
@@ -58,7 +58,7 @@ namespace GEMS_Key
 
         }
 
-        public static List<Category> DeserializeInventory()
+        public static List<Category> DeserializeUserConfig()
         {
             using (FileStream stream = File.OpenRead("config.xml"))
             {
